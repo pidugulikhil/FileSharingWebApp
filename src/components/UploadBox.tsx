@@ -11,6 +11,7 @@ interface UploadBoxProps {
 }
 
 const UploadBox: React.FC<UploadBoxProps> = ({ onUploadComplete }) => {
+  const uploadSuccessToastId = 'toast-upload-success';
   const [selectedFile, setSelectedFile] = useState<FileWithPreview | null>(null);
   const [selectedFolder, setSelectedFolder] = useState<{ name: string; files: File[]; size: number } | null>(null);
   const [selectionMode, setSelectionMode] = useState<'file' | 'folder'>('file');
@@ -114,7 +115,8 @@ const UploadBox: React.FC<UploadBoxProps> = ({ onUploadComplete }) => {
       });
 
       onUploadComplete(result);
-      toast.success('Upload completed successfully!');
+      toast.dismiss(uploadSuccessToastId);
+      toast.success('Upload completed successfully!', { toastId: uploadSuccessToastId });
     } catch (error) {
       clearInterval(progressInterval);
       setUploadStatus({

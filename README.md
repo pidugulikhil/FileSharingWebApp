@@ -86,4 +86,4 @@ VITE_API_BASE_URL=http://your-host.com/server/fileShare.php
 
 ---
 
-Made with ⚡ by Likhil — flow files without friction.
+Made with AI by Likhil — flow files without friction.

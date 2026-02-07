@@ -19,6 +19,10 @@ const formatCountdown = (ms: number) => {
   return [hours, minutes, seconds].map((unit) => String(unit).padStart(2, '0')).join(':');
 };
 
+const TOAST_IDS = {
+  uploadReady: 'toast-upload-ready',
+};
+
 const getInitialTheme = (): 'light' | 'dark' => {
   if (typeof window === 'undefined') return 'light';
   try {
@@ -64,7 +68,8 @@ function App() {
     setRecentUpload(result);
     setUploadedId(result.id);
     setShareTimerTarget(Date.now() + DISPLAY_TIMER_MS);
-    toast.info('File ID ready in the download tab');
+    toast.dismiss(TOAST_IDS.uploadReady);
+    toast.info('File ID ready in the download tab', { toastId: TOAST_IDS.uploadReady });
     setTab('download');
   };
 

@@ -1,7 +1,17 @@
 import JSZip from 'jszip';
 import { FileWithPreview, UploadResult, FileInfo } from '../types';
 
-const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:80/server/fileShare.php';
+const resolveDefaultBaseUrl = () => {
+  if (typeof window !== 'undefined') {
+    if (import.meta.env.DEV) {
+      return 'http://localhost:80/server/fileShare.php';
+    }
+    return `${window.location.origin.replace(/\/$/, '')}/server/fileShare.php`;
+  }
+  return import.meta.env.DEV ? 'http://localhost:80/server/fileShare.php' : '/server/fileShare.php';
+};
+
+const rawBaseUrl = import.meta.env.VITE_API_BASE_URL || resolveDefaultBaseUrl();
 
 const getEndpoint = () => {
   if (rawBaseUrl.endsWith('.php')) return rawBaseUrl;
