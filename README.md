@@ -1,6 +1,6 @@
 # FileShare V1
 
-![App Icon](fs_icon.png)
+<img src="fs_icon.png" alt="FileShare V1 icon" width="200" height="200" />
 
 FileShare V1 is a frictionless browser-based file tunnel that lets anyone drop a single file or entire folder, generate a short-lived download ID, and preview the payload before pulling it back down. Uploads are staged securely on a PHP backend for 48 hours while the UI keeps things simple with tabless toggles, smooth light/dark theming, and instant feedback.
 
