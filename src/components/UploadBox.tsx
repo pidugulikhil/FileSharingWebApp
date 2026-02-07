@@ -311,7 +311,7 @@ const UploadBox: React.FC<UploadBoxProps> = ({ onUploadComplete }) => {
             />
           ) : (
             <button
-              className="w-full mt-4 py-3 px-4 primary-gradient-bg rounded-lg font-medium shadow-lg shadow-purple-900/20 interactive-cta"
+              className="upload-primary"
               onClick={handleStartUpload}
             >
               Upload

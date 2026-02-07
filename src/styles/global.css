@@ -1,3 +1,30 @@
+.upload-primary {
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-bright));
+  color: #ffffff;
+  box-shadow: 0 18px 30px rgba(37, 99, 235, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.theme-dark .upload-primary {
+  border-color: rgba(148, 163, 184, 0.4);
+  box-shadow: 0 18px 30px rgba(15, 23, 42, 0.7);
+}
+
+.upload-primary:hover {
+  transform: translateY(-2px);
+}
+
+.upload-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 18px rgba(37, 99, 235, 0.3);
+}
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
